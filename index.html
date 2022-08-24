@@ -2,20 +2,153 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-        <title>Document</title>
-    </head>
-    
-    <body>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Inicio</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="./imagenes/spartan-logo-removebg-preview.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Spartan Gym</h3>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              
+              <li class="nav-item">
+                <a class="nav-link"  href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="actividades.html">Actividades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="agenda.html">Agenda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="container-fluid main-index">
+      <h1>SPARTAN GYM</h1>
+      <div class="main-img"><img src="./imagenes/spartan-logo-removebg-preview.png" alt=""></div>
+    </main>
+    <aside>
+      <div class="container">
+      <h2>Llego el club deportivo que estabas esperando</h2>
+      <div class="aside-container">
+        <div class="container-img"><img src="https://actionsport.com.ar/wp-content/uploads/2018/04/Recurso-2-1-1.png"
+            alt="Gym"></div>
+        <div class="container-txt"> <h3>Veni a entrenar <br> con nosotros</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum architecto tempore amet atque? Ducimus tempore, architecto eligendi reiciendis neque exercitationem aspernatur cumque pariatur nesciunt necessitatibus consectetur, error minima assumenda mollitia.</p></div>
+      </div>
+    </div>
+    </aside>
+    <section> 
+      <div  class="container">
+      <h2>Nuestras instalaciones</h2>
+      <div class="instalaciones">
+        <div class="instalaciones-list">
+          <ul>
+            <li>Piscina</li>
+            <li>Hidromasaje</li>
+            <li>Vestuarios</li>
+            <li>Sauna </li>
+            <li>Sala de ciclismo</li>
+            <li>Gimnasio</li>
+          </ul>
+          <ul>
+            <li>Sala de musculacion</li>
+            <li>Cancha de tenis</li>
+            <li>Cancha de futbol</li>
+            <li>Centro estético</li>
+            <li>Salas climatizadas</li>
+          </ul>
+        </div>
+        <div class="instalaciones-img">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./imagenes/masaje.jpeg" class="d-block w-100" alt="Masaje">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/pesas.jpeg" class="d-block w-100" alt="Pesas">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/piscina.jpeg" class="d-block w-100" alt="Piscina">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/vestuario.jpg" class="d-block w-100" alt="Vestuario">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/hidromasajer.jpg" class="d-block w-100" alt="Piscina">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/sauna.jpg" class="d-block w-100" alt="Piscina">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="nosotros">
+      <h2>Sobre nosotros</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint sapiente, distinctio neque molestiae pariatur itaque modi necessitatibus deserunt, inventore illum cupiditate voluptatum hic laboriosam? Aspernatur architecto quae rerum repellat! Quos.
+      Ipsam consequatur vel sit aliquam, quas sapiente qui sunt est recusandae illum amet, labore facere nobis tenetur dolores repellat dolorem illo ab magnam cum suscipit! Veniam quidem quibusdam nesciunt in?
+      Eos excepturi architecto, assumenda quae modi ullam suscipit eum et. Itaque maxime consequatur veritatis vitae accusantium totam error, doloremque quod ex excepturi architecto minus magni odit, dolores vel minima saepe!</p>
+    </div>
+  </div>
+    </section>
+   <footer>
+        <div class="redes">
+            <a href=""><img src="./imagenes/Facebook_icon.svg.png" alt=""></a>
+            <a href=""><img src="./imagenes/Instagram_logo_2022.svg" alt=""></a>
+            <a href=""><img src="./imagenes/Twitter-logo.svg.png" alt=""></a>
+        </div>
+        <br>
+        <div class="copyright">
+            Esta pagina es propiedad de Kevin Krusche
+            copyright &copy;
+        </div>
+    </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
