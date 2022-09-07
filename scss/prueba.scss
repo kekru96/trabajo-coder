@@ -7,6 +7,13 @@ body{
     --second-color: rgb(177, 218, 218);
   }
 
+$estilos:(
+  color: white,
+  color1:rgb(167, 34, 167),
+  color2:rgb(177, 218, 218),
+  fuente: 1rem
+);
+
 h2{
     text-align: center;
     color: var(--main-color);
@@ -31,7 +38,7 @@ h1{
 }
 
 .nav-item a:hover{
-    color: white;
+    color: map-get($estilos, color);
     border-radius: 80px;
     font-size: large;
     font-weight: bold;
@@ -103,7 +110,7 @@ h1{
     margin-bottom: 50px;
 }
 
-.portada-texto a{
+.btnIndex{
     background-color:orange;
     color: black;
     text-decoration: none;
@@ -113,7 +120,7 @@ h1{
     transition: all 0.3s;
 }
 
-.portada-texto a:hover{
+.btnIndex:hover{
     color: white;
     border-radius: 8px;
     font-size: large;
@@ -305,10 +312,16 @@ footer{
     margin-top: 100px;
  }
 
+ @mixin contenedor ($back-color, $radio, $pad){
+    background-color: $back-color;
+    border-radius: $radio;
+    padding: $pad;
+    
+ }
+
 .container-contacto{
-    background-color: var(--main-color);
-    border-radius: 10px;
-    padding: 50px;
+    @include contenedor(var(--main-color), 10px, 50px);
+
 }
 
  .boton{
@@ -318,9 +331,7 @@ footer{
  }
 
  .btn{
-    background-color: black;
-    border: none;
-    color: white;
+    @extend .btnIndex;
  }
 
  input{
@@ -328,8 +339,7 @@ footer{
  }
 
  .btn:hover{
-    background: orange;
-    color: black;
+    @extend .btnIndex;
  }
 
  
