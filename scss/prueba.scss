@@ -3,13 +3,13 @@ body{
 }
 
 :root {
-    --main-color: rgb(167, 34, 167);
+    --main-color: rgb(14, 61, 18);
     --second-color: rgb(177, 218, 218);
   }
 
 $estilos:(
   color: white,
-  color1:rgb(167, 34, 167),
+  color1:rgb(14, 61, 18),
   color2:rgb(177, 218, 218),
   fuente: 1rem
 );
@@ -22,19 +22,31 @@ h2{
 }
 
 h1{
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Germania One', cursive;
 }
 
   /* Navigation*/
 
+  .navbar-brand{
+    font-family: 'Germania One', cursive;
+  } 
+
 .navbar-brand img{
     width: 50px;
-    filter: drop-shadow(0 0 5px rgb(255, 255, 255));    
+    filter: drop-shadow(0 0 1px rgb(255, 255, 255));    
+}
+
+.navbar-brand img:hover{
+    transition: all 1s;
+    filter: drop-shadow(0 0 5px rgb(14, 61, 18));
 }
 
 
 .nav-item a{
     padding-left: 20px;
+    border-radius: 80px;
+    transition: all 0.8s;
+    
 }
 
 .nav-item a:hover{
@@ -42,8 +54,19 @@ h1{
     border-radius: 80px;
     font-size: large;
     font-weight: bold;
-    background: rgb(195,34,194);
-    background: linear-gradient(140deg, rgba(195,34,194,1) 0%, rgba(14,160,215,1) 100%);
+    background-color: var(--main-color);
+    animation: slide 1s ease-in-out 0s  alternate both;
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+    
+        100% {
+            transform: translateX(50px);
+        }
+
+    }
+
     
 }
 
@@ -57,7 +80,7 @@ h1{
 }
 
 #offcanvasDarkNavbarLabel{
-    text-shadow: 2px 2px 20px rgb(167, 34, 167);
+    text-shadow: 2px 2px 20px var(--main-color);
     
 }
 
@@ -70,15 +93,15 @@ h1{
     padding-left: 0;
     color: var(--main-color);
     width: 100%;
-    background: rgb(195,34,194);
-    background: linear-gradient(140deg, rgb(195, 34, 195) 70%, rgb(177, 218, 218) 50%);
+    background: var(--main-color);
+    background: linear-gradient(140deg, var(--main-color) 70%, rgb(177, 218, 218) 50%);
 }
 
 .tituloIndex{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Libre Baskerville', serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .portada{
@@ -123,10 +146,9 @@ h1{
 .btnIndex:hover{
     color: white;
     border-radius: 8px;
-    font-size: large;
-    font-weight: bold;
     background: rgb(0, 0, 0);
     border-radius: 30px 10px;
+    box-shadow: 0px 0px 20px 2px white;
 }
 
 
@@ -308,7 +330,7 @@ footer{
  }
 
  .main-contacto{
-    height: 70vh;
+    height: 100vh;
     margin-top: 100px;
  }
 
@@ -320,9 +342,34 @@ footer{
  }
 
 .container-contacto{
-    @include contenedor(var(--main-color), 10px, 50px);
+    @include contenedor(rgb(66, 66, 66), 10px, 50px);
+    box-shadow: 00px 0px 80px 10px var(--main-color);
 
 }
+
+.foto-datos{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fotoMail{  
+
+    height: 300px;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+
 
  .boton{
     display: flex;
@@ -377,9 +424,119 @@ footer{
         margin-top: 50px;
     }
 
- 
+    /* Agenda */
 
-    @media only screen and (max-width: 600px) {
+    .main-agenda{
+        height: 70vh;
+        margin-top: 100px;
+     }
+
+    .tituloAgenda{
+        margin: 50px;
+        color: var(--main-color);
+     }
+
+     .main-agenda li{
+        list-style: none;
+         
+    }
+
+    .container-agenda{
+        width: 60%;
+        color: white;
+        box-shadow: 00px 0px 80px 10px var(--main-color);
+    }
+    
+    .sexo-selecciona{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        
+    }
+
+    .selecciona{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* planes */
+
+    .main-planes{
+        
+        margin-top: 100px;
+
+        h1{
+            color: var(--main-color);
+        }
+     }
+
+    .planes{
+        display: flex;
+        
+
+        .card{
+            margin: 20px;
+            background-color: rgb(66, 66, 66);
+            color: white;
+            padding: 5px;
+            box-shadow: 00px 0px 20px 10px var(--main-color);
+            
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+
+    /* Error */
+
+    .main-error{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+
+        p{
+            text-align: center;
+        }
+        
+    }
+
+    .error-img{
+
+        width: 40%;
+
+      
+
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .titulo404{
+        color: grey;
+    }
+    
+
+
+ 
+    /* responsive (funciona bien hasta 350)*/
+
+    @media only screen and (max-width: 700px) {
         h1{font-size: 3em;}
         h2{font-size: 2em;}
         h3{font-size: 1em;}
@@ -394,7 +551,11 @@ footer{
         }
 
         .main-index{
-            height: 180vh;
+            height: 1100px;
+            background: rgb(195,34,194);
+            margin-bottom: 100px;
+            padding-bottom: 100px;
+            
         }
 
         .main-img{
@@ -416,6 +577,8 @@ footer{
 
         .portada-texto{
             padding: 0px;
+            margin: 0px;
+            width: 75%;
         }
 
         .portada-texto h2{
@@ -438,7 +601,7 @@ footer{
 
         aside{
             margin: 0px;
-            height: 120vh;
+            height: 1000px;
         }
 
         aside .container h2{
@@ -455,18 +618,37 @@ footer{
 
         .container-txt{
             padding: 20px;
+            width: 75%;
+        }
+
+        .container-txt h3{
+            font-size: 1.5em;
         }
 
         /* section*/
 
         section{
-            height: 120vh;
+            height: 1050px;
             margin: 0px;
             padding: 0px;
+                div{
+                    h2{
+                        padding-top: 50px;
+                    }
+                }
         }
 
         .instalaciones-list{
             font-size: medium;
+        }
+
+        .nosotros{
+            
+            width: 100%;
+                p{
+                    margin-top: 30px;
+                    padding: 40px;
+                }
         }
 
         /* footer */
@@ -474,5 +656,57 @@ footer{
         .copyright{
             font-size: 0.8em;
         }
+
+        /* contacto */
+
+        .foto-datos{
+            padding: 0px;
+            justify-content: center;
+        }
+
+        .fotoMail{
+            display: none;
+        }
+
+        .main-contacto{
+            height: 650px;
+        }
+
+        .tituoContacto{
+            margin: 0px;
+            padding: 0px;
+        }
+    
+        .container-contacto{
+            width: 90%;
+            margin-top: 50px;
+    
+        }
+    
+        .g-3{
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* actividades */
+
+        .main-actividades h1{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .actividadesP{
+            width: 90%;
+            margin-top: 50px;
+        }
+
+        /* Planes */
+
+        .planes{
+            flex-direction: column;
+            align-items: center;
+        }
+
+
 
     }

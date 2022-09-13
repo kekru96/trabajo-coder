@@ -2,7 +2,7 @@ body {
   background-color: #b1dada; }
 
 :root {
-  --main-color: rgb(167, 34, 167);
+  --main-color: rgb(14, 61, 18);
   --second-color: rgb(177, 218, 218); }
 
 h2 {
@@ -12,23 +12,38 @@ h2 {
   font-family: 'Oswald', sans-serif; }
 
 h1 {
-  font-family: 'Libre Baskerville', serif; }
+  font-family: 'Germania One', cursive; }
 
 /* Navigation*/
+.navbar-brand {
+  font-family: 'Germania One', cursive; }
+
 .navbar-brand img {
   width: 50px;
-  filter: drop-shadow(0 0 5px white); }
+  filter: drop-shadow(0 0 1px white); }
+
+.navbar-brand img:hover {
+  transition: all 1s;
+  filter: drop-shadow(0 0 5px #0e3d12); }
 
 .nav-item a {
-  padding-left: 20px; }
+  padding-left: 20px;
+  border-radius: 80px;
+  transition: all 0.8s; }
 
 .nav-item a:hover {
   color: white;
   border-radius: 80px;
   font-size: large;
   font-weight: bold;
-  background: #c322c2;
-  background: linear-gradient(140deg, #c322c2 0%, #0ea0d7 100%); }
+  background-color: var(--main-color);
+  animation: slide 1s ease-in-out 0s  alternate both; }
+
+@keyframes slide {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(50px); } }
 
 .navbar-toggler {
   transition: all 0.4s; }
@@ -38,7 +53,7 @@ h1 {
   box-shadow: 0px 0px 5px white; }
 
 #offcanvasDarkNavbarLabel {
-  text-shadow: 2px 2px 20px #a722a7; }
+  text-shadow: 2px 2px 20px var(--main-color); }
 
 /*main index*/
 .main-index {
@@ -48,14 +63,14 @@ h1 {
   padding-left: 0;
   color: var(--main-color);
   width: 100%;
-  background: #c322c2;
-  background: linear-gradient(140deg, #c322c3 70%, #b1dada 50%); }
+  background: var(--main-color);
+  background: linear-gradient(140deg, var(--main-color) 70%, #b1dada 50%); }
 
 .tituloIndex {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Libre Baskerville', serif; }
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
 
 .portada {
   display: flex;
@@ -92,10 +107,9 @@ h1 {
 .btnIndex:hover, .btn:hover {
   color: white;
   border-radius: 8px;
-  font-size: large;
-  font-weight: bold;
   background: black;
-  border-radius: 30px 10px; }
+  border-radius: 30px 10px;
+  box-shadow: 0px 0px 20px 2px white; }
 
 .portada-texto h2 {
   padding-bottom: 30px; }
@@ -235,13 +249,30 @@ footer {
   color: var(--main-color); }
 
 .main-contacto {
-  height: 70vh;
+  height: 100vh;
   margin-top: 100px; }
 
 .container-contacto {
-  background-color: var(--main-color);
+  background-color: #424242;
   border-radius: 10px;
-  padding: 50px; }
+  padding: 50px;
+  box-shadow: 0px 0px 80px 10px var(--main-color); }
+
+.foto-datos {
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  justify-content: space-between; }
+
+.fotoMail {
+  height: 300px;
+  padding: 50px;
+  border-radius: 50%;
+  background-color: var(--main-color); }
+  .fotoMail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 .boton {
   display: flex;
@@ -275,7 +306,78 @@ input {
 .galeria {
   margin-top: 50px; }
 
-@media only screen and (max-width: 600px) {
+/* Agenda */
+.main-agenda {
+  height: 70vh;
+  margin-top: 100px; }
+
+.tituloAgenda {
+  margin: 50px;
+  color: var(--main-color); }
+
+.main-agenda li {
+  list-style: none; }
+
+.container-agenda {
+  width: 60%;
+  color: white;
+  box-shadow: 0px 0px 80px 10px var(--main-color); }
+
+.sexo-selecciona {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.selecciona {
+  margin: 0px;
+  padding: 0px; }
+
+/* planes */
+.main-planes {
+  margin-top: 100px; }
+  .main-planes h1 {
+    color: var(--main-color); }
+
+.planes {
+  display: flex; }
+  .planes .card {
+    margin: 20px;
+    background-color: #424242;
+    color: white;
+    padding: 5px;
+    box-shadow: 0px 0px 20px 10px var(--main-color); }
+    .planes .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .planes .card .btn {
+      width: 100%; }
+
+/* Error */
+.main-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white; }
+  .main-error p {
+    text-align: center; }
+
+.error-img {
+  width: 40%; }
+  .error-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.titulo404 {
+  color: grey; }
+
+/* responsive (funciona bien hasta 350)*/
+@media only screen and (max-width: 700px) {
   h1 {
     font-size: 3em; }
   h2 {
@@ -288,7 +390,10 @@ input {
     flex-direction: column;
     margin-bottom: 50px; }
   .main-index {
-    height: 180vh; }
+    height: 1100px;
+    background: #c322c2;
+    margin-bottom: 100px;
+    padding-bottom: 100px; }
   .main-img {
     display: none; }
   .portada-img {
@@ -300,7 +405,9 @@ input {
     padding: 0px;
     margin: 0px; }
   .portada-texto {
-    padding: 0px; }
+    padding: 0px;
+    margin: 0px;
+    width: 75%; }
   .portada-texto h2 {
     margin-top: 50px; }
   .instalaciones-list {
@@ -313,7 +420,7 @@ input {
   /* aside index*/
   aside {
     margin: 0px;
-    height: 120vh; }
+    height: 1000px; }
   aside .container h2 {
     margin-top: 0px; }
   .aside-container {
@@ -321,14 +428,52 @@ input {
   .container-img {
     margin-bottom: 50px; }
   .container-txt {
-    padding: 20px; }
+    padding: 20px;
+    width: 75%; }
+  .container-txt h3 {
+    font-size: 1.5em; }
   /* section*/
   section {
-    height: 120vh;
+    height: 1050px;
     margin: 0px;
     padding: 0px; }
+    section div h2 {
+      padding-top: 50px; }
   .instalaciones-list {
     font-size: medium; }
+  .nosotros {
+    width: 100%; }
+    .nosotros p {
+      margin-top: 30px;
+      padding: 40px; }
   /* footer */
   .copyright {
-    font-size: 0.8em; } }
+    font-size: 0.8em; }
+  /* contacto */
+  .foto-datos {
+    padding: 0px;
+    justify-content: center; }
+  .fotoMail {
+    display: none; }
+  .main-contacto {
+    height: 650px; }
+  .tituoContacto {
+    margin: 0px;
+    padding: 0px; }
+  .container-contacto {
+    width: 90%;
+    margin-top: 50px; }
+  .g-3 {
+    display: flex;
+    flex-direction: column; }
+  /* actividades */
+  .main-actividades h1 {
+    margin: 0px;
+    padding: 0px; }
+  .actividadesP {
+    width: 90%;
+    margin-top: 50px; }
+  /* Planes */
+  .planes {
+    flex-direction: column;
+    align-items: center; } }
