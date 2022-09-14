@@ -3,14 +3,14 @@ body{
 }
 
 :root {
-    --main-color: rgb(14, 61, 18);
+    --main-color: rgb(16, 66, 21);
     --second-color: rgb(177, 218, 218);
   }
 
 $estilos:(
   color: white,
   color1:rgb(14, 61, 18),
-  color2:rgb(177, 218, 218),
+  color2:rgb(177, 218, 180),
   fuente: 1rem
 );
 
@@ -18,11 +18,21 @@ h2{
     text-align: center;
     color: var(--main-color);
     font-size: 5em;
-    font-family: 'Oswald', sans-serif;
+    
+    
 }
 
 h1{
     font-family: 'Germania One', cursive;
+    color:var(--main-color);
+    font-size: 8em;
+    text-align: center;
+    
+}
+
+h5{font-family: 'Germania One', cursive;
+    font-size: 2em;
+
 }
 
   /* Navigation*/
@@ -95,13 +105,18 @@ h1{
     width: 100%;
     background: var(--main-color);
     background: linear-gradient(140deg, var(--main-color) 70%, rgb(177, 218, 218) 50%);
+
+    h1{
+        color: white;
+        
+    }
 }
 
 .tituloIndex{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
 }
 
 .portada{
@@ -113,6 +128,7 @@ h1{
 .portada-texto{
     width: 50%;
     padding: 50px;
+    
 }
 
 .portada-img{
@@ -123,6 +139,7 @@ h1{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    animation: derecha 2s ease 0s 1 normal forwards;
 }
 
 .portada-texto h2{
@@ -131,6 +148,14 @@ h1{
 
 .portada-texto p{
     margin-bottom: 50px;
+}
+
+.portada-texto{
+    
+    div{
+        animation: izquierda 2s ease 0s 1 normal forwards;
+
+    }
 }
 
 .btnIndex{
@@ -144,11 +169,21 @@ h1{
 }
 
 .btnIndex:hover{
-    color: white;
+    
     border-radius: 8px;
-    background: rgb(0, 0, 0);
+    background-color: var(--second-color);
     border-radius: 30px 10px;
     box-shadow: 0px 0px 20px 2px white;
+    color: black;
+}
+
+.btnAgenda{
+    background-color: white;
+}
+
+.btnAgenda:hover{
+    box-shadow: 0px 0px 20px 2px orange;
+    color: black;
 }
 
 
@@ -164,16 +199,12 @@ h1{
 
 
 
-h1{
-    font-size: 8em;
-    text-align: center;
-    color: white;
-}
 
 .main-img{
     width: 200px;
     height: 200PX;
     filter: drop-shadow(0 0 5px rgb(255, 255, 255)); 
+    
 }
 
 .main-img img{
@@ -182,15 +213,37 @@ h1{
     height: 100%;
 }
 
-/* aside index*/
+@keyframes izquierda {
+	0% {
+		transform: translateX(-80vw);
+	}
 
-aside{
-    height: 100vh;
-    margin-top: 100px;
-
+	100% {
+		transform: translateX(0px);
+	}
 }
 
+@keyframes derecha {
+	0% {
+		transform: translateX(80vw);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+
+
+
+
+
+/* aside index*/
+
+
+
 .aside-container{
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,6 +291,8 @@ aside .container h2{
 
 .conNosotros{
     color: orange;
+    font-family: 'Rubik Wet Paint', cursive;
+    rotate: -3deg;
 }
 
 /*section*/
@@ -325,13 +380,15 @@ footer{
  /* aqui comienza el css de la pagina "contacto" */
 
  .tituoContacto{
-    margin: 50px;
-    color: var(--main-color);
+    margin-bottom: 50px;
+    color: white;
+    
  }
 
  .main-contacto{
-    height: 100vh;
     margin-top: 100px;
+    
+
  }
 
  @mixin contenedor ($back-color, $radio, $pad){
@@ -343,7 +400,7 @@ footer{
 
 .container-contacto{
     @include contenedor(rgb(66, 66, 66), 10px, 50px);
-    box-shadow: 00px 0px 80px 10px var(--main-color);
+    box-shadow: 10px 10px 50px 10px black;
 
 }
 
@@ -359,7 +416,7 @@ footer{
     height: 300px;
     padding: 50px;
     border-radius: 50%;
-    background-color: var(--main-color);
+    background-color: white;
 
     img{
         width: 100%;
@@ -389,21 +446,93 @@ footer{
     @extend .btnIndex;
  }
 
+ .aside-contacto{
+    background: var(--main-color);
+    padding: 100px 50px 100px 50px;
+   
+    
+    
+    .container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+
+            .info{
+                text-decoration: none;
+                list-style: none;
+
+                li{
+                    font-size: 30px;
+                    margin-bottom: 50px;
+                }
+            }
+    }
+ }
+
+
+ .material-symbols-outlined {
+   font-variation-settings:
+   'FILL' 1,
+   'wght' 700,
+   'GRAD' 0,
+   'opsz' 48
+ }
+ 
+
+
+
  
   /* aqui comienza el css de la pagina "actividades" */
 
   .main-actividades{
-      margin-top: 100px;
+    width: 100%;
+           
 
         h1{
-            margin: 50px;
-            color: var(--main-color);
+            
+            transform: translateY(-50vh);
+            z-index: 50;
+            color: white;
+            text-align: center;
+            
+            img{
+                width: 50px;
+                animation: bajar 2s ease 0s infinite alternate-reverse forwards;
+            }
         }
     }
+
+    @keyframes bajar {
+        0% {
+            transform: translateY(0);
+        }
+    
+        100% {
+            transform: translateY(50px);
+        }
+    }
+
+    .video{
+        
+        height: 100vh;
+
+        
+      }
+
+    .video video{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;}
 
 
     .card{
         height: 100%;
+    }
+
+    .card-body{
+        background-color: rgb(66, 66, 66);
+        color: white;
     }
 
     .card img{
@@ -413,6 +542,7 @@ footer{
     }
 
     .actividadesP{
+        margin-top: -200px;
         color: white;
         background-color: var(--main-color);
         padding: 40px;
@@ -433,7 +563,7 @@ footer{
 
     .tituloAgenda{
         margin: 50px;
-        color: var(--main-color);
+        
      }
 
      .main-agenda li{
@@ -444,12 +574,12 @@ footer{
     .container-agenda{
         width: 60%;
         color: white;
-        box-shadow: 00px 0px 80px 10px var(--main-color);
+        box-shadow: 10px 10px 50px 10px black;
     }
     
     .sexo-selecciona{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 25px;
         margin-bottom: 25px;
@@ -467,9 +597,7 @@ footer{
         
         margin-top: 100px;
 
-        h1{
-            color: var(--main-color);
-        }
+
      }
 
     .planes{
@@ -482,6 +610,7 @@ footer{
             color: white;
             padding: 5px;
             box-shadow: 00px 0px 20px 10px var(--main-color);
+            height: auto;
             
 
             img{
@@ -548,6 +677,7 @@ footer{
         .tituloIndex{
             flex-direction: column;
             margin-bottom: 50px;
+            
         }
 
         .main-index{
