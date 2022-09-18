@@ -1,14 +1,15 @@
 body {
-  background-color: #b1dada; }
+  background-color: #6b80d9; }
 
 :root {
-  --main-color: rgb(16, 66, 21);
-  --second-color: rgb(177, 218, 218); }
+  --main-color: rgb(24, 20, 73);
+  --second-color: #6b80d9; }
 
 h2 {
   text-align: center;
   color: var(--main-color);
-  font-size: 5em; }
+  font-size: 5em;
+  font-family: 'Lobster', cursive; }
 
 h1 {
   font-family: 'Germania One', cursive;
@@ -16,9 +17,15 @@ h1 {
   font-size: 8em;
   text-align: center; }
 
+h3 {
+  font-family: 'Gravitas One', cursive; }
+
 h5 {
   font-family: 'Germania One', cursive;
   font-size: 2em; }
+
+p {
+  font-family: 'Roboto', sans-serif; }
 
 /* Navigation*/
 .navbar-brand {
@@ -30,7 +37,7 @@ h5 {
 
 .navbar-brand img:hover {
   transition: all 1s;
-  filter: drop-shadow(0 0 5px #0e3d12); }
+  filter: drop-shadow(0 0 5px var(--second-color)); }
 
 .nav-item a {
   padding-left: 20px;
@@ -64,13 +71,12 @@ h5 {
 /*main index*/
 .main-index {
   padding-top: 100px;
-  height: 100vh;
   padding-right: 0;
   padding-left: 0;
   color: var(--main-color);
   width: 100%;
   background: var(--main-color);
-  background: linear-gradient(140deg, var(--main-color) 70%, #b1dada 50%); }
+  background: linear-gradient(140deg, var(--main-color) 70%, var(--second-color) 50%); }
   .main-index h1 {
     color: white; }
 
@@ -163,7 +169,8 @@ h5 {
   margin-top: 100px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding-bottom: 50px; }
 
 aside .container h2 {
   margin: 100px; }
@@ -179,8 +186,7 @@ aside .container h2 {
 .container-txt {
   width: 50%;
   color: white;
-  background-color: var(--main-color);
-  border-radius: 20px 80px;
+  border-radius: 20px;
   padding: 50px; }
 
 .container-txt h3 {
@@ -203,24 +209,33 @@ aside .container h2 {
 /*section*/
 section {
   margin-top: 50px;
-  background-color: var(--main-color);
-  padding: 80px; }
+  background-color: var(--main-color); }
+
+.section-index {
+  padding-bottom: 50px; }
 
 section h2 {
   margin-bottom: 50px;
+  padding-top: 50px;
   color: white; }
 
 .instalaciones-list {
   display: flex;
   color: white;
-  font-size: 20px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-radius: 30px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  background-color: var(--second-color);
+  padding: 30px; }
 
 .instalaciones-list ul {
   padding: 40px 50px; }
+
+.instalaciones-list ul li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding-top: 20px; }
 
 .carousel-item {
   width: 100%;
@@ -233,12 +248,12 @@ section h2 {
   height: 100%; }
 
 .nosotros {
-  margin-top: 150px; }
+  margin-top: 100px; }
 
 .nosotros p {
   color: white;
   background-color: var(--main-color);
-  padding: 80px;
+  padding: 20px;
   border-radius: 30px; }
 
 /*footer*/
@@ -270,16 +285,23 @@ footer {
 /* aqui comienza el css de la pagina "contacto" */
 .tituoContacto {
   margin-bottom: 50px;
-  color: white; }
-
-.main-contacto {
+  color: var(--main-color);
   margin-top: 100px; }
 
+.main-contacto {
+  margin-top: 100px;
+  margin-bottom: 100px; }
+
 .container-contacto {
-  background-color: #424242;
+  background-color: var(--main-color);
   border-radius: 10px;
   padding: 50px;
-  box-shadow: 10px 10px 50px 10px black; }
+  box-shadow: 0px 0px 20px 10px var(--main-color);
+  animation: derecha 2s ease 0s 1 normal forwards; }
+  .container-contacto h2 {
+    color: white;
+    margin-bottom: 100px;
+    text-align: center; }
 
 .foto-datos {
   padding-left: 100px;
@@ -307,7 +329,10 @@ input {
 
 .aside-contacto {
   background: var(--main-color);
-  padding: 100px 50px 100px 50px; }
+  padding: 100px 50px 100px 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 10px var(--main-color);
+  animation: izquierda 2s ease 0s 1 normal forwards; }
   .aside-contacto .container {
     display: flex;
     justify-content: space-around;
@@ -321,7 +346,23 @@ input {
         margin-bottom: 50px; }
 
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48; }
+  font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+  color: orange;
+  animation: vibrar 3s ease 0s infinite normal forwards; }
+
+@keyframes vibrar {
+  0% {
+    transform: translate(0); }
+  20% {
+    transform: translate(-2px, 2px); }
+  40% {
+    transform: translate(-2px, -2px); }
+  60% {
+    transform: translate(2px, 2px); }
+  80% {
+    transform: translate(2px, -2px); }
+  100% {
+    transform: translate(0); } }
 
 /* aqui comienza el css de la pagina "actividades" */
 .main-actividades {
@@ -353,7 +394,7 @@ input {
   height: 100%; }
 
 .card-body {
-  background-color: #424242;
+  background-color: #363636;
   color: white; }
 
 .card img {
@@ -363,17 +404,13 @@ input {
 
 .actividadesP {
   margin-top: -200px;
-  color: white;
-  background-color: var(--main-color);
-  padding: 40px;
-  border-radius: 80px 10px; }
+  color: white; }
 
 .galeria {
   margin-top: 50px; }
 
 /* Agenda */
 .main-agenda {
-  height: 70vh;
   margin-top: 100px; }
 
 .tituloAgenda {
@@ -385,7 +422,8 @@ input {
 .container-agenda {
   width: 60%;
   color: white;
-  box-shadow: 10px 10px 50px 10px black; }
+  box-shadow: 10px 10px 50px 10px black;
+  animation: izquierda 2s ease 0s 1 normal forwards; }
 
 .sexo-selecciona {
   display: flex;
@@ -397,6 +435,8 @@ input {
 .selecciona {
   margin: 0px;
   padding: 0px; }
+  .selecciona .select {
+    color: black; }
 
 /* planes */
 .main-planes {
@@ -411,12 +451,44 @@ input {
     padding: 5px;
     box-shadow: 0px 0px 20px 10px var(--main-color);
     height: auto; }
+    .planes .card .card-body {
+      display: flex;
+      flex-direction: column; }
+      .planes .card .card-body h4 {
+        color: green;
+        text-shadow: 0px 0px 10px green; }
+      .planes .card .card-body p {
+        margin-top: auto; }
+      .planes .card .card-body a {
+        margin-top: auto; }
     .planes .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+      height: auto; }
     .planes .card .btn {
       width: 100%; }
+
+.card1 {
+  animation: cae 2s ease 0s 1 normal forwards; }
+
+.card2 {
+  animation: sube 2s ease 0s 1 normal forwards; }
+
+.card3 {
+  animation: cae 2s ease 0s 1 normal forwards; }
+
+.card4 {
+  animation: sube 2s ease 0s 1 normal forwards; }
+
+@keyframes cae {
+  0% {
+    transform: translateY(-500px); }
+  100% {
+    transform: translateY(0px); } }
+
+@keyframes sube {
+  0% {
+    transform: translateY(500px); }
+  100% {
+    transform: translateY(0px); } }
 
 /* Error */
 .main-error {
@@ -440,11 +512,11 @@ input {
   color: grey; }
 
 /* responsive (funciona bien hasta 350)*/
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1200px) {
   h1 {
-    font-size: 3em; }
+    font-size: 3.5em; }
   h2 {
-    font-size: 2em; }
+    font-size: 2.5em; }
   h3 {
     font-size: 1em; }
   .container-txt h3 {
@@ -453,20 +525,27 @@ input {
     flex-direction: column;
     margin-bottom: 50px; }
   .main-index {
-    height: 1100px;
-    background: #c322c2;
+    height: auto;
+    background: var(--main-color);
     margin-bottom: 100px;
     padding-bottom: 100px; }
-  .main-img {
-    display: none; }
+  .btnIndex, .btn, .btn:hover {
+    text-align: center; }
+  .btnAgenda {
+    margin-top: 10px; }
+  .botones-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
   .portada-img {
-    width: 50vw; }
+    display: none; }
   .portada {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     padding: 0px;
-    margin: 0px; }
+    margin: 0px;
+    width: auto; }
   .portada-texto {
     padding: 0px;
     margin: 0px;
@@ -475,15 +554,13 @@ input {
     margin-top: 50px; }
   .instalaciones-list {
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-    padding-left: 20px; }
+    padding-left: 50px; }
   .instalaciones-list ul {
     margin: 0px;
     padding: 1px; }
   /* aside index*/
-  aside {
-    margin: 0px;
-    height: 1000px; }
   aside .container h2 {
     margin-top: 0px; }
   .aside-container {
@@ -497,9 +574,9 @@ input {
     font-size: 1.5em; }
   /* section*/
   section {
-    height: 1050px;
     margin: 0px;
-    padding: 0px; }
+    padding: 0px;
+    padding-bottom: 50px; }
     section div h2 {
       padding-top: 50px; }
   .instalaciones-list {
@@ -520,15 +597,22 @@ input {
     display: none; }
   .main-contacto {
     height: 650px; }
-  .tituoContacto {
-    margin: 0px;
-    padding: 0px; }
   .container-contacto {
     width: 90%;
     margin-top: 50px; }
   .g-3 {
     display: flex;
     flex-direction: column; }
+  .aside-contacto {
+    margin-top: 100px;
+    padding-left: 0px;
+    padding-right: 0px; }
+    .aside-contacto .container {
+      flex-direction: column; }
+  .info {
+    margin-top: 50px; }
+  .aside-contacto .container .info li {
+    font-size: 15px; }
   /* actividades */
   .main-actividades h1 {
     margin: 0px;
@@ -539,4 +623,9 @@ input {
   /* Planes */
   .planes {
     flex-direction: column;
-    align-items: center; } }
+    align-items: center; }
+  /* Agenda */
+  .sexo-selecciona {
+    flex-direction: column; }
+  .sexo {
+    margin: 50px 0px; } }
